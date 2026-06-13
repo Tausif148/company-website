@@ -524,7 +524,7 @@ const ServicesDetails: React.FC = () => {
               </div>
               <div className="reveal" style={{ transitionDelay: "0.1s" }}>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                  {enrich.technologies.map((tech, i) => (
+                  {enrich.technologies.map((tech) => (
                     <div
                       key={tech.name}
                       className="group flex flex-col items-center justify-center bg-[#F7F8FC] hover:bg-[#EEF3FB]
