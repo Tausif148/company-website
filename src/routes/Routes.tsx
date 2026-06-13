@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createHashRouter, Navigate } from "react-router-dom";
 
 // Common layout
 import App from "src/pages/layout/App";
@@ -16,18 +16,7 @@ import Services from "src/pages/Services";
 import TechnicalExpertise from "src/pages/TechnicalExpertise";
 import ServicesDetails from "src/pages/ServicesDetails";
 
-const router = createBrowserRouter([
-  // Public Routes
-  // {
-  //   path: "/admin/login",
-  //   element: <Login />,
-  // },
-  // {
-  //   path: "/admin/signup",
-  //   element: <Register />,
-  // },
-
-  // Main Layout
+const router = createHashRouter([
   {
     path: "/",
     children: [
@@ -98,8 +87,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
-  // Redirect any unmatched route to Home
   {
     path: "*",
     element: <Navigate to="/" replace />,
