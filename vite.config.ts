@@ -9,7 +9,12 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 
-  server: { port: 5174 },
+  base: "/company-website/",
+
+  server: {
+    port: 5174,
+  },
+
   resolve: {
     alias: {
       src: path.resolve(__dirname, "./src"),
