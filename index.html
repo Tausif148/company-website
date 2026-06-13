@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SK Solution</title>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.0.23/bundled/lenis.min.css" />
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      // LENIS SMOOTH SCROLL
+      window.lenis = new Lenis();
+
+      function raf(time) {
+        window.lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,694 @@
+/* =========================================================
+   Google Fonts
+========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
+/* =========================================================
+   Tailwind CSS
+========================================================= */
+@import "tailwindcss";
+
+/* =========================================================
+   Global Styles
+========================================================= */
+
+.max-w-[1440px] {
+  border: 1px solid red !important;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f7f8fc;
+  color: #081d3a;
+  margin: 0;
+  padding: 0;
+  /* Prevent horizontal overflow globally */
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   Material Symbols Configuration
+========================================================= */
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+/* =========================================================
+   Glass Morphism Effect
+========================================================= */
+
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================================
+   Orbital Hero Animation
+========================================================= */
+
+.orbital-container {
+  position: relative;
+  perspective: 2000px;
+  /* Clip orbits that bleed outside on mobile */
+  overflow: hidden;
+}
+
+.orbit-item {
+  position: absolute;
+  will-change: transform;
+}
+
+/* =========================================================
+   Floating Animation
+========================================================= */
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.floating {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* =========================================================
+   Levitation Animation
+========================================================= */
+
+@keyframes levitate {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.levitate {
+  animation: levitate 4s ease-in-out infinite;
+}
+
+/* =========================================================
+   Reveal On Scroll Animation
+========================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   Hero Text Glow
+========================================================= */
+
+.text-glow {
+  text-shadow: 0 4px 18px rgba(20, 83, 230, 0.18);
+}
+
+/* =========================================================
+   Background Blob Animation
+========================================================= */
+
+@keyframes blob-motion {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(20px, -30px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-15px, 15px) scale(0.95);
+  }
+}
+
+.ambient-blob {
+  animation: blob-motion 18s ease-in-out infinite alternate;
+}
+
+/* =========================================================
+   Card Hover Effect
+========================================================= */
+
+.bento-card {
+  transition: all 0.3s ease;
+}
+
+.bento-card:hover {
+  transform: translateY(-8px);
+}
+
+/* =========================================================
+   Tilt Card Hover Animation
+========================================================= */
+
+.tilt-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.tilt-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.tilt-card>* {
+  transform: translateZ(16px);
+}
+
+/* =========================================================
+   Industry Grid Feature Cards
+========================================================= */
+
+.feature-card {
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(20, 83, 230, 0.35);
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   Image Hover Zoom Effect
+========================================================= */
+
+.image-hover {
+  overflow: hidden;
+  border-radius: 32px;
+}
+
+.image-hover img {
+  transition: transform 0.7s ease;
+}
+
+.image-hover:hover img {
+  transform: scale(1.05);
+}
+
+/* Smaller radius on mobile */
+@media (max-width: 639px) {
+  .image-hover {
+    border-radius: 20px;
+  }
+}
+
+/* =========================================================
+   Blue Glow Effect
+========================================================= */
+
+.blue-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 32px;
+  background: rgba(20, 83, 230, 0.08);
+  filter: blur(60px);
+  transition: all 0.4s ease;
+}
+
+.group:hover .blue-glow {
+  background: rgba(20, 83, 230, 0.16);
+}
+
+/* =========================================================
+   Live Feed Pulse Animation
+========================================================= */
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.live-dot {
+  animation: pulse-dot 1.5s infinite;
+}
+
+/* =========================================================
+   Section Hover Lift
+========================================================= */
+
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   Custom Scrollbar (desktop only — no effect on mobile)
+========================================================= */
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f8f9ff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1453e6;
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0f46c9;
+  }
+}
+
+/* =========================================================
+   Accessibility - Reduced Motion
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .floating,
+  .levitate,
+  .ambient-blob,
+  .live-dot {
+    animation: none !important;
+  }
+
+  .orbit-item,
+  .reveal,
+  .tilt-card,
+  .bento-card,
+  .feature-card,
+  .hover-lift,
+  .image-hover img {
+    transition: none !important;
+  }
+
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   3D Image Animation
+========================================================= */
+
+.image-3d {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.6s ease;
+  will-change: transform;
+  animation: imageFloat 6s ease-in-out infinite;
+}
+
+/* Hover only on pointer devices — avoids stuck state on touch */
+@media (hover: hover) and (pointer: fine) {
+  .image-3d:hover {
+    transform: rotateX(8deg) rotateY(-8deg) translateY(-12px) scale(1.02);
+    box-shadow:
+      0 30px 60px rgba(0, 0, 0, 0.15),
+      0 10px 30px rgba(20, 83, 230, 0.12);
+  }
+}
+
+@keyframes imageFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ==========================================
+   ORBIT SYSTEM
+========================================== */
+
+.orbit {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Large Orbit */
+.orbit-large {
+  width: 620px;
+  height: 620px;
+  animation: orbit-spin 25s linear infinite;
+}
+
+/* Medium Orbit */
+.orbit-medium {
+  width: 500px;
+  height: 500px;
+  animation: orbit-spin 20s linear infinite;
+}
+
+/* Small Orbit */
+.orbit-small {
+  width: 380px;
+  height: 380px;
+  animation: orbit-spin 16s linear infinite;
+}
+
+/* ── Background ──────────────────────────────────────────────── */
+.home-bg {
+  background: linear-gradient(160deg, #e8eeff 0%, #f0f4ff 40%, #eaf0fb 100%);
+}
+
+/* Subtle dot-grid overlay matching the design screenshot */
+.home-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle,
+      rgba(99, 120, 220, 0.18) 1px,
+      transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ── Glass orb surface (light theme) ────────────────────────── */
+.orb-glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 4px 24px rgba(99, 120, 220, 0.1),
+    0 1px 4px rgba(99, 120, 220, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.orb-glass:hover {
+  box-shadow:
+    0 8px 40px rgba(99, 120, 220, 0.18),
+    0 2px 8px rgba(99, 120, 220, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* ── Core orb gentle float ───────────────────────────────────── */
+@keyframes float-core {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-core {
+  animation: float-core 5s ease-in-out infinite;
+}
+
+/* ── Pulse status dot ────────────────────────────────────────── */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.pulse-dot {
+  animation: pulse-ring 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .float-core {
+    animation: none;
+  }
+
+  .pulse-dot {
+    animation: none;
+  }
+}
+
+/* Tablet — scale down orbits */
+@media (max-width: 1023px) {
+  .orbit-large {
+    width: 460px;
+    height: 460px;
+  }
+
+  .orbit-medium {
+    width: 360px;
+    height: 360px;
+  }
+
+  .orbit-small {
+    width: 270px;
+    height: 270px;
+  }
+}
+
+/* Mobile — scale down further */
+@media (max-width: 639px) {
+  .orbit-large {
+    width: 300px;
+    height: 300px;
+  }
+
+  .orbit-medium {
+    width: 230px;
+    height: 230px;
+  }
+
+  .orbit-small {
+    width: 170px;
+    height: 170px;
+  }
+
+  .orbit-node {
+    padding: 8px 14px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* Reverse Rotation */
+.reverse {
+  animation-direction: reverse;
+}
+
+/* Delays */
+.delay-1 {
+  animation-delay: 2s;
+}
+
+.delay-2 {
+  animation-delay: 4s;
+}
+
+.delay-3 {
+  animation-delay: 6s;
+}
+
+.delay-4 {
+  animation-delay: 8s;
+}
+
+.delay-5 {
+  animation-delay: 10s;
+}
+
+/* Node */
+.orbit-node {
+  position: absolute;
+  top: -16px;
+  padding: 14px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.orbit-node:hover {
+  background: #1453e6;
+  transform: scale(1.05);
+}
+
+/* Orbit Animation */
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+/*=========================== BACK TO TOP  ===========================*/
+button.back-to-top {
+  margin: 0;
+  padding: 0;
+  background-color: #EEF3FB;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  color: transparent;
+  clear: both;
+  visibility: hidden;
+  position: fixed;
+  cursor: pointer;
+  display: block;
+  border: none;
+  right: 50px;
+  bottom: 75px;
+  font-size: 0;
+  outline: 0;
+  z-index: 99;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+button.back-to-top:hover,
+button.back-to-top:active,
+button.back-to-top:focus {
+  outline: 0;
+}
+
+button.back-to-top::before,
+button.back-to-top::after {
+  content: "";
+  display: block;
+  border-bottom: solid 10px white;
+  border-left: solid 10px transparent;
+  line-height: 0;
+  border-right: solid 10px transparent;
+  height: 0;
+  margin: 18px auto 0;
+  width: 0;
+  border-radius: 20px;
+  visibility: hidden;
+}
+
+button.back-to-top::after {
+    border-bottom-color: #081d3a;
+  position: relative;
+  top: -24px;
+}
+
+button.back-to-top.show {
+  display: block;
+  background-color: #081D3A;
+  font-size: 25px;
+  right: 25px;
+  bottom: 50px;
+  height: 50px;
+  width: 50px;
+  visibility: visible;
+  box-shadow: 0px 2px 4px 1px rgba(255, 127, 0, 0.25);
+  -webkit-box-shadow: 0px 2px 4px 1px rgba(255, 127, 0, 0.25);
+  -moz-box-shadow: 0px 2px 4px 1px rgba(255, 127, 0, 0.25);
+  z-index: 1;
+}
+
+
+
+button.back-to-top.show::after,
+button.back-to-top.show::before {
+  visibility: visible;
+}
+
+button.back-to-top.show:focus-visible {
+  background: #081D3A;
+  outline: 3px solid #FF7F00;
+  outline-offset: 3px;
+}
+
+button.back-to-top.show:focus-visible::after {
+  background: #081D3A;
+}
+
+button.back-to-top.show:focus-visible::before {
+  background: #FF7F00;
+}
+
+button.back-to-top.show:active {
+  box-shadow: 0px 4px 8px 2px rgba(255, 127, 0, 0.35);
+  -webkit-box-shadow: 0px 4px 8px 2px rgba(255, 127, 0, 0.35);
+  -moz-box-shadow: 0px 4px 8px 2px rgba(255, 127, 0, 0.35);
+}

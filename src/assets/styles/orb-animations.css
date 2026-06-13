@@ -1,0 +1,131 @@
+/* ── Background ──────────────────────────────────────────────── */
+.home-main {
+    background: radial-gradient(circle at 50% 50%, #eff4ff 0%, #f8f9ff 100%);
+    overflow: hidden;
+    cursor: default;
+}
+
+/* Grid overlay matching Stitch design */
+.home-bg {
+    background-image:
+        linear-gradient(rgba(60, 105, 243, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(60, 105, 243, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* ── Glass orb — mouse-tracked radial gradient ────────────────
+   --mouse-x / --mouse-y set by useMouseGlow hook on mousemove.
+   Default 50%/50% = centered highlight when not hovering.      */
+.glass-orb {
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.6) 0%,
+            rgba(255, 255, 255, 0.3) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.05),
+        inset 0 0 20px rgba(255, 255, 255, 0.5);
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.5s ease,
+        background 0.5s ease,
+        border-color 0.3s ease;
+}
+
+/* Hover: brighter highlight + blue glow + blue border */
+.glass-orb:hover {
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(255, 255, 255, 0.4) 100%);
+    box-shadow:
+        0 40px 80px -20px rgba(60, 105, 243, 0.2),
+        inset 0 0 30px rgba(255, 255, 255, 0.8);
+    border-color: #3c69f3;
+}
+
+/* ── Icon glow ────────────────────────────────────────────────  */
+.orb-icon-glow {
+    filter: drop-shadow(0 0 8px rgba(60, 105, 243, 0.4));
+}
+
+/* ── Ambient blobs (decorative bg circles) ───────────────────── */
+.ambient-blob {
+    position: absolute;
+    filter: blur(120px);
+    opacity: 0.3;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ── Core orb float ──────────────────────────────────────────── */
+@keyframes float-core {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.float-core {
+    animation: float-core 5s ease-in-out infinite;
+}
+
+/* ── Satellite float (CSS fallback, rAF overrides transform) ─── */
+@keyframes orbitalShuffle {
+    0% {
+        translate: 0px 0px;
+        rotate: 0deg;
+    }
+
+    50% {
+        translate: 15px -20px;
+        rotate: 2deg;
+    }
+
+    100% {
+        translate: -10px 10px;
+        rotate: -1deg;
+    }
+}
+
+/* ── Pulse status dot ────────────────────────────────────────── */
+@keyframes pulseRing {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+.pulse-dot {
+    animation: pulseRing 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+
+    .float-core,
+    .pulse-dot {
+        animation: none !important;
+    }
+
+    .glass-orb {
+        transition: none !important;
+    }
+}

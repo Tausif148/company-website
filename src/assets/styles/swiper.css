@@ -1,0 +1,219 @@
+/* =====================================================
+   GLOBAL SWIPER NAVIGATION BUTTONS
+===================================================== */
+.swiper-button-prev,
+.swiper-button-next {
+  top: 40% !important;
+  width: 40px !important;
+  height: 40px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50% !important;
+  border: 1px solid #e5e7eb !important;
+
+  background: #1453e6 !important;
+  color: #ffffff !important;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s ease;
+  padding: 0.75rem;
+}
+
+/* Arrow Icons */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+/* Hover */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: #ff7f00 !important;
+  color: #ffffff !important;
+}
+
+/* Desktop positions — flush with container edge */
+.swiper-button-prev {
+  left: -1px !important;
+}
+
+.swiper-button-next {
+  right: -1px !important;
+}
+
+/* Tablet — pull inside so they don't clip viewport */
+@media (max-width: 1023px) {
+  .swiper-button-prev {
+    left: 4px !important;
+  }
+
+  .swiper-button-next {
+    right: 4px !important;
+  }
+}
+
+/* Mobile — smaller buttons, fully inside */
+@media (max-width: 639px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0.6rem !important;
+    display: none !important;
+  }
+
+  .swiper-button-prev {
+    left: 4px !important;
+  }
+
+  .swiper-button-next {
+    right: 4px !important;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 11px !important;
+  }
+}
+
+
+/* =====================================================
+   ECOSYSTEM SLIDER
+===================================================== */
+
+.ecosystem-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.ecosystem-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #1453e6;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.ecosystem-swiper .swiper-pagination-bullet-active {
+  width: 22px;
+  border-radius: 999px;
+  background: #1453e6;
+  opacity: 1;
+}
+
+.ecosystem-swiper .swiper-button-prev,
+.ecosystem-swiper .swiper-button-next {
+  top: 40% !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+}
+
+@media (max-width: 639px) {
+  .ecosystem-swiper .swiper-button-prev,
+  .ecosystem-swiper .swiper-button-next {
+    width: 28px !important;
+    height: 28px !important;
+    top: 38% !important;
+  }
+}
+
+
+/* =====================================================
+   TESTIMONIAL SLIDER
+===================================================== */
+.testimonial-swiper {
+  overflow: visible !important;
+}
+
+/* Pagination */
+.testimonial-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.testimonial-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #1453e6;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.testimonial-swiper .swiper-pagination-bullet-active {
+  width: 24px;
+  border-radius: 999px;
+  background: #1453e6;
+  opacity: 1;
+}
+
+/* Navigation — sit at bottom, centred either side of pagination */
+.testimonial-swiper .swiper-button-prev,
+.testimonial-swiper .swiper-button-next {
+  top: auto !important;
+  bottom: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
+  box-shadow: 0 10px 25px rgba(20, 83, 230, 0.1);
+  transition: all 0.3s ease;
+}
+
+.testimonial-swiper .swiper-button-prev {
+  left: calc(50% - 56px) !important;
+}
+
+.testimonial-swiper .swiper-button-next {
+  right: calc(50% - 56px) !important;
+}
+
+.testimonial-swiper .swiper-button-prev::after,
+.testimonial-swiper .swiper-button-next::after {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+
+/* Tablet */
+@media (max-width: 1023px) {
+
+  .testimonial-swiper .swiper-button-prev,
+  .testimonial-swiper .swiper-button-next {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .testimonial-swiper .swiper-button-prev {
+    left: calc(50% - 52px) !important;
+  }
+
+  .testimonial-swiper .swiper-button-next {
+    right: calc(50% - 52px) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 639px) {
+
+  .testimonial-swiper .swiper-button-prev,
+  .testimonial-swiper .swiper-button-next {
+    width: 32px !important;
+    height: 32px !important;
+    bottom: 0 !important;
+  }
+
+  .testimonial-swiper .swiper-button-prev {
+    left: calc(50% - 46px) !important;
+  }
+
+  .testimonial-swiper .swiper-button-next {
+    right: calc(50% - 46px) !important;
+  }
+
+  .testimonial-swiper .swiper-button-prev::after,
+  .testimonial-swiper .swiper-button-next::after {
+    font-size: 11px !important;
+  }
+}
